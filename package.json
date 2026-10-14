@@ -1,0 +1,27 @@
+{
+  "name": "TiktokDownloader",
+  "version": "1.0.0",
+  "description": "App para probar agentes de IA con tecnologias web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "servor src index.html --reload",
+    "deploy": "gh-pages -d src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.24.0",
+  "type": "module",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "servor": "^4.0.2"
+  }
+}

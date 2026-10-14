@@ -1,0 +1,50 @@
+/*
+ * Estilos complementarios. La mayor parte del diseño viene de DaisyUI + Tailwind
+ * (cargados por CDN en index.html); aquí solo van detalles que no cubren sus clases.
+ */
+
+/* Paleta en tonos azules para los temas de DaisyUI */
+:root,
+[data-theme='dark'],
+[data-theme='light'] {
+  --color-primary: oklch(56% 0.22 252); /* Azul vibrante / royal blue */
+  --color-primary-content: oklch(98% 0.01 252);
+  --color-secondary: oklch(65% 0.18 235); /* Azul cielo / celeste */
+  --color-secondary-content: oklch(98% 0.01 235);
+}
+
+/* Transición suave al cambiar entre tema claro y oscuro */
+html {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Animación de entrada para la tarjeta de resultados y los mensajes */
+#result-section:not([hidden]),
+#status-message:not([hidden]) {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Evita que la miniatura se muestre rota mientras no tiene src */
+#video-thumbnail[src=''] {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #result-section:not([hidden]),
+  #status-message:not([hidden]) {
+    animation: none;
+  }
+}
